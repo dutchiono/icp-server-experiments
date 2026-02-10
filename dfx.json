@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "canisters": {
+    "orchestrator": {
+      "type": "motoko",
+      "main": "src/orchestrator/main.mo",
+      "declarations": {
+        "output": "src/declarations/orchestrator",
+        "bindings": ["js", "ts"]
+      }
+    },
+    "file_storage": {
+      "type": "motoko",
+      "main": "src/file_storage/main.mo",
+      "declarations": {
+        "output": "src/declarations/file_storage",
+        "bindings": ["js", "ts"]
+      }
+    },
+    "conversation": {
+      "type": "motoko",
+      "main": "src/conversation/main.mo",
+      "declarations": {
+        "output": "src/declarations/conversation",
+        "bindings": ["js", "ts"]
+      }
+    },
+    "treasury": {
+      "type": "motoko",
+      "main": "src/treasury/main.mo",
+      "declarations": {
+        "output": "src/declarations/treasury",
+        "bindings": ["js", "ts"]
+      }
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    },
+    "replica": {
+      "subnet_type": "system"
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:4943",
+      "type": "ephemeral"
+    },
+    "ic": {
+      "providers": [
+        "https://icp-api.io"
+      ],
+      "type": "persistent"
+    }
+  }
+}
